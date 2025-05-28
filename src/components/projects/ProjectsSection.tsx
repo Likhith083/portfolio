@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
@@ -15,24 +16,31 @@ export default function ProjectsSection({ projects, animationConfig }: ProjectsS
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollY(window.pageYOffset);
+      // Check if window is defined (client-side)
+      if (typeof window !== 'undefined') {
+        setScrollY(window.pageYOffset);
+      }
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', handleScroll);
+      // Call handleScroll once to set initial scrollY if page is already scrolled
+      handleScroll(); 
+    }
+    
+    return () => {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('scroll', handleScroll);
+      }
+    };
   }, []);
 
   const getPanelStyle = (index: number): React.CSSProperties => {
-    // Parallax effect: panels move slightly slower than scroll
     const parallaxOffset = scrollY * 0.1 * animationConfig.intensityFactor;
-    
-    // Staggered animation delay based on AI config
-    // Base delay + index based stagger * speedFactor (lower factor = slower = longer delay)
-    const baseDelay = 50; // ms
-    const staggerDelay = 100; // ms
+    const baseDelay = 50; 
+    const staggerDelay = 100;
     const animationDelay = `${baseDelay + index * (staggerDelay / animationConfig.speedFactor)}ms`;
-
-    // Base transition duration, adjusted by speedFactor
-    const baseDuration = 500; // ms
+    const baseDuration = 500;
     const animationDuration = `${baseDuration / animationConfig.speedFactor}ms`;
 
     return {
@@ -46,7 +54,7 @@ export default function ProjectsSection({ projects, animationConfig }: ProjectsS
       <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-center sticky top-0 bg-background/80 backdrop-blur-sm py-4 z-10">
         My Projects
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {projects.map((project, index) => (
           <ProjectPanel
             key={project.id}

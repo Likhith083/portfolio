@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from 'next/image';
@@ -42,9 +43,13 @@ export default function ProjectPanel({ project, animationStyle }: ProjectPanelPr
   }, []);
 
   return (
-    <div ref={cardRef} style={animationStyle} className={`transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-      <Card className="overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300 bg-card/90 backdrop-blur-sm border-none h-full flex flex-col">
-        <div className="relative w-full h-48 md:h-56">
+    <div 
+      ref={cardRef} 
+      style={animationStyle} 
+      className={`group relative transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+    >
+      <Card className="overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-300 ease-in-out bg-card/90 backdrop-blur-sm border-none h-full flex flex-col group-hover:scale-105 group-hover:z-20 rounded-lg">
+        <div className="relative w-full h-48 md:h-56"> {/* Image container */}
           <Image
             src={project.imageUrl}
             alt={project.title}
@@ -56,7 +61,10 @@ export default function ProjectPanel({ project, animationStyle }: ProjectPanelPr
         </div>
         <CardHeader className="p-4 md:p-6">
           <CardTitle className="text-xl md:text-2xl font-semibold text-primary">{project.title}</CardTitle>
-          <CardDescription className="text-sm md:text-base text-foreground/80 mt-1 h-20 overflow-hidden">
+          <CardDescription className="text-sm md:text-base text-foreground/80 mt-1 
+                                      max-h-12 md:max-h-16 group-hover:max-h-48  /* Initial max height, expands on hover */
+                                      overflow-hidden group-hover:overflow-y-auto 
+                                      transition-all duration-300 ease-in-out">
             {project.description}
           </CardDescription>
         </CardHeader>
@@ -70,7 +78,7 @@ export default function ProjectPanel({ project, animationStyle }: ProjectPanelPr
           </div>
         </CardContent>
         {project.link && (
-          <CardFooter className="p-4 md:p-6 pt-0">
+          <CardFooter className="p-4 md:p-6 pt-0 mt-auto"> {/* mt-auto to push footer to bottom */}
             <Button asChild variant="ghost" className="w-full text-accent hover:bg-accent/10 hover:text-accent-foreground">
               <a href={project.link} target="_blank" rel="noopener noreferrer">
                 View Project <ExternalLink className="ml-2 h-4 w-4" />
