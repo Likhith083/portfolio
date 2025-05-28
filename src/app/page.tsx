@@ -2,24 +2,36 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import { ScrollAnimator } from '@/components/ScrollAnimator';
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-background text-foreground flex flex-col items-center justify-center p-8">
-      <div className="text-center space-y-8">
-        <h1 className="text-5xl font-bold text-primary animate-float-in" style={{ animationDelay: '0.2s' }}>
-          My Interactive Portfolio
-        </h1>
-        <p className="text-xl text-foreground/80 animate-float-in" style={{ animationDelay: '0.4s' }}>
-          Exploring Skills, Projects, and Hobbies in a new dimension.
-        </p>
+    <main className="min-h-screen bg-background text-foreground flex flex-col items-center justify-center p-8 overflow-x-hidden">
+      <div className="text-center space-y-8 w-full max-w-5xl">
+        <ScrollAnimator delay="0.1s" className="w-full">
+          <h1 className="text-5xl font-bold text-primary">
+            My Interactive Portfolio
+          </h1>
+        </ScrollAnimator>
+        <ScrollAnimator delay="0.2s" className="w-full">
+          <p className="text-xl text-foreground/80">
+            Exploring Skills, Projects, and Hobbies in a new dimension.
+          </p>
+        </ScrollAnimator>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-float-in" style={{ animationDelay: '0.6s' }}>
-          {/* Placeholder sections - we will build these out with 3D-like interactions */}
-          <SectionCard title="My Skills" description="Discover the technologies I master." link="/skills" />
-          <SectionCard title="My Resume" description="A brief overview of my journey." link="/resume" />
-          <SectionCard title="My Hobbies" description="What I do in my free time." link="/hobbies" />
-          <SectionCard title="My Projects" description="See my work in action." link="/projects" />
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <ScrollAnimator delay="0.3s">
+            <SectionCard title="My Skills" description="Discover the technologies I master." link="/skills" />
+          </ScrollAnimator>
+          <ScrollAnimator delay="0.4s">
+            <SectionCard title="My Resume" description="A brief overview of my journey." link="/resume" />
+          </ScrollAnimator>
+          <ScrollAnimator delay="0.5s">
+            <SectionCard title="My Hobbies" description="What I do in my free time." link="/hobbies" />
+          </ScrollAnimator>
+          <ScrollAnimator delay="0.6s">
+            <SectionCard title="My Projects" description="See my work in action." link="/projects" />
+          </ScrollAnimator>
         </div>
       </div>
     </main>
