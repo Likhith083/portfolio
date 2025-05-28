@@ -1,3 +1,4 @@
+
 export interface Project {
   id: string;
   title: string;
@@ -15,6 +16,8 @@ export interface Bio {
   skills: string[];
   avatarUrl?: string;
   dataAiHintAvatar?: string;
+  linkedinUrl?: string;
+  githubUrl?: string;
 }
 
 export interface AnimationConfig {

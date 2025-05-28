@@ -28,7 +28,9 @@ export const bioContent: Bio = {
     "Retrieval Augmented Generation (RAG)"
   ],
   avatarUrl: "https://placehold.co/128x128.png",
-  dataAiHintAvatar: "professional student"
+  dataAiHintAvatar: "professional student",
+  linkedinUrl: "https://www.linkedin.com/in/likhithavileli/",
+  githubUrl: "#", // Please replace # with your actual GitHub profile URL
 };
 
 export const projectsData: Project[] = [
@@ -39,7 +41,7 @@ export const projectsData: Project[] = [
     imageUrl: 'https://placehold.co/600x400.png',
     dataAiHint: 'bookstore software',
     tags: ['Systems Analysis and Design', 'JavaFX', 'SQLite', 'DBMS'],
-    link: '#',
+    link: '#', // User can update this link
   },
   {
     id: '2',
@@ -48,7 +50,7 @@ export const projectsData: Project[] = [
     imageUrl: 'https://placehold.co/600x400.png',
     dataAiHint: 'event planning',
     tags: ['Systems Analysis and Design', 'Python', 'SQLite', 'DBMS'],
-    link: '#',
+    link: '#', // User can update this link
   },
   {
     id: '3',
@@ -57,7 +59,7 @@ export const projectsData: Project[] = [
     imageUrl: 'https://placehold.co/600x400.png',
     dataAiHint: 'artificial intelligence',
     tags: ['AI', 'LLM', 'Python', 'Ollama', 'Hugging Face', 'RAG'],
-    link: '#',
+    link: '#', // User can update this link
   },
   {
     id: '4',
@@ -65,7 +67,7 @@ export const projectsData: Project[] = [
     description: 'This very portfolio, showcasing my skills and projects. Built with Next.js and featuring dynamic animations, parallax effects, and an AI-driven animation adjuster.',
     imageUrl: 'https://placehold.co/600x400.png',
     dataAiHint: 'personal website',
-    tags: ['Next.js', 'AI', 'Animation', 'Tailwind CSS'],
-    link: '#',
+    tags: ['Next.js', 'AI', 'Animation', 'Tailwind CSS', 'React'],
+    link: 'https://github.com/yourusername/kinetic-folio', // Example link
   },
 ];
