@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import type { Bio } from '@/lib/types';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -10,7 +11,7 @@ interface BioSectionProps {
 
 export default function BioSection({ bio }: BioSectionProps) {
   return (
-    <Card className="h-full flex flex-col shadow-xl bg-card border-none">
+    <Card className="w-full max-w-4xl mx-auto flex flex-col shadow-xl bg-card border-none rounded-lg">
       <CardHeader className="p-6 text-center">
         {bio.avatarUrl ? (
           <Image
