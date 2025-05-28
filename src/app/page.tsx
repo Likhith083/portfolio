@@ -3,14 +3,18 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Linkedin, Github } from 'lucide-react';
 import { ScrollAnimator } from '@/components/ScrollAnimator';
-import { bioContent } from '@/data/content'; // Import bioContent to access social links
+import { bioContent } from '@/data/content';
 import Image from 'next/image';
 
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-background text-foreground flex flex-col items-center justify-center p-8 overflow-x-hidden">
       <div className="text-center space-y-8 w-full max-w-5xl">
-        <ScrollAnimator delay="0.0s" className="w-full flex flex-col items-center">
+        <ScrollAnimator 
+          delay="0.0s" 
+          className="w-full flex flex-col items-center"
+          textContentToAnalyze={bioContent.name} // Pass name for AI analysis
+        >
           {bioContent.avatarUrl && (
             <Image 
               src={bioContent.avatarUrl} 
@@ -25,18 +29,30 @@ export default function HomePage() {
             {bioContent.name}
           </h1>
         </ScrollAnimator>
-        <ScrollAnimator delay="0.1s" className="w-full">
+        <ScrollAnimator 
+          delay="0.1s" 
+          className="w-full"
+          textContentToAnalyze={bioContent.tagline} // Pass tagline
+        >
           <p className="text-xl md:text-2xl text-foreground/80">
             {bioContent.tagline}
           </p>
         </ScrollAnimator>
-        <ScrollAnimator delay="0.2s" className="w-full">
+        <ScrollAnimator 
+          delay="0.2s" 
+          className="w-full"
+          textContentToAnalyze={bioContent.paragraph} // Pass main paragraph
+        >
           <p className="text-md md:text-lg text-muted-foreground max-w-2xl mx-auto">
             {bioContent.paragraph}
           </p>
         </ScrollAnimator>
 
-        <ScrollAnimator delay="0.25s" className="w-full">
+        <ScrollAnimator 
+          delay="0.25s" 
+          className="w-full"
+          // No specific text to analyze for a group of buttons, will use default animation
+        >
           <div className="flex justify-center gap-4 mt-4 mb-8">
             {bioContent.linkedinUrl && (
               <Button asChild variant="outline" size="icon" className="rounded-full hover:bg-primary/10 hover:border-primary">
@@ -60,18 +76,17 @@ export default function HomePage() {
           </div>
         </ScrollAnimator>
 
-
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <ScrollAnimator delay="0.3s">
+          <ScrollAnimator delay="0.3s" textContentToAnalyze="My Skills: Discover the technologies I master.">
             <SectionCard title="My Skills" description="Discover the technologies I master." link="/skills" />
           </ScrollAnimator>
-          <ScrollAnimator delay="0.4s">
+          <ScrollAnimator delay="0.4s" textContentToAnalyze="My Resume: A detailed overview of my journey.">
             <SectionCard title="My Resume" description="A detailed overview of my journey." link="/resume" />
           </ScrollAnimator>
-          <ScrollAnimator delay="0.5s">
+          <ScrollAnimator delay="0.5s" textContentToAnalyze="My Hobbies: What I do in my free time.">
             <SectionCard title="My Hobbies" description="What I do in my free time." link="/hobbies" />
           </ScrollAnimator>
-          <ScrollAnimator delay="0.6s">
+          <ScrollAnimator delay="0.6s" textContentToAnalyze="My Projects: See my work in action.">
             <SectionCard title="My Projects" description="See my work in action." link="/projects" />
           </ScrollAnimator>
         </div>

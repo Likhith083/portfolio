@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -37,6 +38,10 @@
     --sidebar-accent-foreground: 0 0% 100%;
     --sidebar-border: 0 0% 20%;
     --sidebar-ring: 357 93% 47%;
+
+    /* Default animation parameters */
+    --anim-duration: 0.5s;
+    --anim-translateY-initial: 20px;
   }
 }
 
@@ -49,11 +54,11 @@
   }
 }
 
-/* Keyframe for float-in animation */
+/* Keyframe for float-in animation using CSS variables */
 @keyframes floatIn {
   0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(var(--anim-translateY-initial));
   }
   100% {
     opacity: 1;
@@ -61,14 +66,14 @@
   }
 }
 
-/* Base style for elements that will animate on scroll */
+/* Base style for elements that will animate on scroll using CSS variables */
 .scroll-anim-base {
   opacity: 0;
-  transform: translateY(20px); /* Default starting position */
+  transform: translateY(var(--anim-translateY-initial)); /* Use CSS variable for initial position */
   will-change: opacity, transform; /* Hint to browser for smoother animation */
 }
 
-/* Class added by ScrollAnimator to trigger the animation */
+/* Class added by ScrollAnimator to trigger the animation using CSS variables */
 .scroll-anim-base.start-animation {
-  animation: floatIn 0.5s ease-out forwards;
+  animation: floatIn var(--anim-duration) ease-out forwards; /* Use CSS variable for duration */
 }
