@@ -39,9 +39,9 @@
     --sidebar-border: 0 0% 20%;
     --sidebar-ring: 357 93% 47%;
 
-    /* Default animation parameters */
-    --anim-duration: 0.5s;
-    --anim-translateY-initial: 20px;
+    /* Default animation parameters - these are no longer used by scroll-anim-base directly for dynamic adjustment */
+    /* --anim-duration: 0.5s; */
+    /* --anim-translateY-initial: 20px; */
   }
 }
 
@@ -54,11 +54,11 @@
   }
 }
 
-/* Keyframe for float-in animation using CSS variables */
+/* Keyframe for float-in animation using fixed values */
 @keyframes floatIn {
   0% {
     opacity: 0;
-    transform: translateY(var(--anim-translateY-initial));
+    transform: translateY(20px); /* Fixed value */
   }
   100% {
     opacity: 1;
@@ -66,14 +66,14 @@
   }
 }
 
-/* Base style for elements that will animate on scroll using CSS variables */
+/* Base style for elements that will animate on scroll using fixed values */
 .scroll-anim-base {
   opacity: 0;
-  transform: translateY(var(--anim-translateY-initial)); /* Use CSS variable for initial position */
+  transform: translateY(20px); /* Fixed initial position */
   will-change: opacity, transform; /* Hint to browser for smoother animation */
 }
 
-/* Class added by ScrollAnimator to trigger the animation using CSS variables */
+/* Class added by ScrollAnimator to trigger the animation using fixed values */
 .scroll-anim-base.start-animation {
-  animation: floatIn var(--anim-duration) ease-out forwards; /* Use CSS variable for duration */
+  animation: floatIn 0.5s ease-out forwards; /* Fixed duration and animation name */
 }

@@ -13,7 +13,7 @@ export default function HomePage() {
         <ScrollAnimator 
           delay="0.0s" 
           className="w-full flex flex-col items-center"
-          textContentToAnalyze={bioContent.name} // Pass name for AI analysis
+          // textContentToAnalyze prop removed
         >
           {bioContent.avatarUrl && (
             <Image 
@@ -32,7 +32,7 @@ export default function HomePage() {
         <ScrollAnimator 
           delay="0.1s" 
           className="w-full"
-          textContentToAnalyze={bioContent.tagline} // Pass tagline
+          // textContentToAnalyze prop removed
         >
           <p className="text-xl md:text-2xl text-foreground/80">
             {bioContent.tagline}
@@ -41,7 +41,7 @@ export default function HomePage() {
         <ScrollAnimator 
           delay="0.2s" 
           className="w-full"
-          textContentToAnalyze={bioContent.paragraph} // Pass main paragraph
+          // textContentToAnalyze prop removed
         >
           <p className="text-md md:text-lg text-muted-foreground max-w-2xl mx-auto">
             {bioContent.paragraph}
@@ -51,7 +51,7 @@ export default function HomePage() {
         <ScrollAnimator 
           delay="0.25s" 
           className="w-full"
-          // No specific text to analyze for a group of buttons, will use default animation
+          // textContentToAnalyze prop removed (was commented out anyway)
         >
           <div className="flex justify-center gap-4 mt-4 mb-8">
             {bioContent.linkedinUrl && (
@@ -77,16 +77,16 @@ export default function HomePage() {
         </ScrollAnimator>
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <ScrollAnimator delay="0.3s" textContentToAnalyze="My Skills: Discover the technologies I master.">
+          <ScrollAnimator delay="0.3s" /* textContentToAnalyze prop removed */>
             <SectionCard title="My Skills" description="Discover the technologies I master." link="/skills" />
           </ScrollAnimator>
-          <ScrollAnimator delay="0.4s" textContentToAnalyze="My Resume: A detailed overview of my journey.">
+          <ScrollAnimator delay="0.4s" /* textContentToAnalyze prop removed */>
             <SectionCard title="My Resume" description="A detailed overview of my journey." link="/resume" />
           </ScrollAnimator>
-          <ScrollAnimator delay="0.5s" textContentToAnalyze="My Hobbies: What I do in my free time.">
+          <ScrollAnimator delay="0.5s" /* textContentToAnalyze prop removed */>
             <SectionCard title="My Hobbies" description="What I do in my free time." link="/hobbies" />
           </ScrollAnimator>
-          <ScrollAnimator delay="0.6s" textContentToAnalyze="My Projects: See my work in action.">
+          <ScrollAnimator delay="0.6s" /* textContentToAnalyze prop removed */>
             <SectionCard title="My Projects" description="See my work in action." link="/projects" />
           </ScrollAnimator>
         </div>
