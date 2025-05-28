@@ -4,71 +4,45 @@
 
 @layer base {
   :root {
-    --background: 210 29% 95%; /* #F0F4F8 Light Gray */
-    --foreground: 220 15% 20%; /* Darker gray for text on light background */
-    --card: 0 0% 100%;
-    --card-foreground: 220 15% 20%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 20%;
-    --primary: 207 86% 68%; /* #64B5F6 Subdued Blue */
-    --primary-foreground: 210 30% 98%; /* Light text for on primary */
-    --secondary: 210 25% 90%; /* Slightly darker gray for secondary elements */
-    --secondary-foreground: 220 15% 20%;
-    --muted: 210 25% 90%;
-    --muted-foreground: 220 10% 45%; /* Muted text */
-    --accent: 231 35% 70%; /* #7986CB Soft Violet */
-    --accent-foreground: 210 30% 98%; /* Light text for on accent */
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 210 20% 85%; /* Border color */
-    --input: 210 20% 88%;
-    --ring: 207 86% 68%; /* Ring color to match primary */
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 0 0% 8%; /* #141414 Netflix Black */
+    --foreground: 0 0% 100%; /* #FFFFFF White */
+    --card: 0 0% 12%; /* #1F1F1F Dark Gray */
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 357 93% 47%; /* #E50914 Netflix Red */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 18%; /* #2D2D2D Darker Gray */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 25%; /* #404040 Muted Gray */
+    --muted-foreground: 0 0% 75%; /* #BDBDBD Lighter Muted Text */
+    --accent: 357 93% 47%; /* #E50914 Netflix Red */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 357 93% 47%; /* Netflix Red for destructive actions */
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 20%; /* #333333 Subtle Border */
+    --input: 0 0% 15%; /* #262626 Input Background */
+    --ring: 357 93% 47%; /* Netflix Red for focus rings */
+    --chart-1: 357 93% 47%; /* Netflix Red */
+    --chart-2: 0 0% 70%; /* Light Gray */
+    --chart-3: 0 0% 50%; /* Medium Gray */
+    --chart-4: 357 80% 60%; /* Lighter Red */
+    --chart-5: 0 0% 85%; /* Very Light Gray */
+    --radius: 0.3rem; /* Slightly sharper corners like Netflix */
+    --sidebar-background: 0 0% 10%; /* #1A1A1A */
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 357 93% 47%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 357 93% 47%;
   }
 
-  .dark {
-    /* Basic dark theme, can be expanded if needed */
-    --background: 220 15% 10%;
-    --foreground: 210 29% 95%;
-    --card: 220 15% 12%;
-    --card-foreground: 210 29% 95%;
-    --popover: 220 15% 12%;
-    --popover-foreground: 210 29% 95%;
-    --primary: 207 86% 68%;
-    --primary-foreground: 220 15% 5%;
-    --secondary: 220 15% 18%;
-    --secondary-foreground: 210 29% 95%;
-    --muted: 220 15% 18%;
-    --muted-foreground: 210 10% 65%;
-    --accent: 231 35% 70%;
-    --accent-foreground: 220 15% 5%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 220 15% 25%;
-    --input: 220 15% 22%;
-    --ring: 207 86% 68%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
+  /* 
+    The .dark class is no longer needed as the root theme is now dark.
+    If a light theme is desired later, it can be re-added.
+  */
 }
 
 @layer base {
@@ -77,7 +51,6 @@
   }
   body {
     @apply bg-background text-foreground;
-    /* Removed font-family: Arial, Helvetica, sans-serif; to let Geist from layout.tsx apply */
   }
 }
 

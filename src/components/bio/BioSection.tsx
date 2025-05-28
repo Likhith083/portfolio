@@ -10,7 +10,7 @@ interface BioSectionProps {
 
 export default function BioSection({ bio }: BioSectionProps) {
   return (
-    <Card className="h-full flex flex-col shadow-xl bg-card/80 backdrop-blur-sm border-none">
+    <Card className="h-full flex flex-col shadow-xl bg-card border-none">
       <CardHeader className="p-6 text-center">
         {bio.avatarUrl ? (
           <Image
@@ -34,7 +34,7 @@ export default function BioSection({ bio }: BioSectionProps) {
         <h3 className="text-xl font-semibold mb-3 text-primary">Skills</h3>
         <div className="flex flex-wrap gap-2">
           {bio.skills.map((skill) => (
-            <Badge key={skill} variant="secondary" className="text-sm px-3 py-1 bg-primary/10 text-primary-foreground hover:bg-primary/20 border border-primary/30">
+            <Badge key={skill} variant="secondary" className="text-sm px-3 py-1 bg-muted text-muted-foreground hover:bg-muted/80 border-none">
               {skill}
             </Badge>
           ))}

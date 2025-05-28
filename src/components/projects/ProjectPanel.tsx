@@ -48,7 +48,7 @@ export default function ProjectPanel({ project, animationStyle }: ProjectPanelPr
       style={animationStyle} 
       className={`group relative transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
     >
-      <Card className="overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-300 ease-in-out bg-card/90 backdrop-blur-sm border-none h-full flex flex-col group-hover:scale-105 group-hover:z-20 rounded-lg">
+      <Card className="overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-300 ease-in-out bg-card border-none h-full flex flex-col group-hover:scale-105 group-hover:z-20 rounded-lg">
         <div className="relative w-full h-48 md:h-56"> {/* Image container */}
           <Image
             src={project.imageUrl}
@@ -71,7 +71,7 @@ export default function ProjectPanel({ project, animationStyle }: ProjectPanelPr
         <CardContent className="p-4 md:p-6 pt-0 flex-grow">
           <div className="flex flex-wrap gap-2 mb-4">
             {project.tags.map((tag) => (
-              <Badge key={tag} variant="outline" className="text-xs md:text-sm border-accent text-accent hover:bg-accent/10">
+              <Badge key={tag} variant="secondary" className="text-xs md:text-sm bg-muted text-muted-foreground hover:bg-muted/80 border-none">
                 {tag}
               </Badge>
             ))}
@@ -79,7 +79,7 @@ export default function ProjectPanel({ project, animationStyle }: ProjectPanelPr
         </CardContent>
         {project.link && (
           <CardFooter className="p-4 md:p-6 pt-0 mt-auto"> {/* mt-auto to push footer to bottom */}
-            <Button asChild variant="ghost" className="w-full text-accent hover:bg-accent/10 hover:text-accent-foreground">
+            <Button asChild variant="ghost" className="w-full text-accent hover:bg-accent/20 hover:text-accent-foreground">
               <a href={project.link} target="_blank" rel="noopener noreferrer">
                 View Project <ExternalLink className="ml-2 h-4 w-4" />
               </a>
