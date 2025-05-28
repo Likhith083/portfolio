@@ -13,7 +13,6 @@ export default function HomePage() {
         <ScrollAnimator 
           delay="0.0s" 
           className="w-full flex flex-col items-center"
-          // textContentToAnalyze prop removed
         >
           {bioContent.avatarUrl && (
             <Image 
@@ -32,7 +31,6 @@ export default function HomePage() {
         <ScrollAnimator 
           delay="0.1s" 
           className="w-full"
-          // textContentToAnalyze prop removed
         >
           <p className="text-xl md:text-2xl text-foreground/80">
             {bioContent.tagline}
@@ -41,7 +39,6 @@ export default function HomePage() {
         <ScrollAnimator 
           delay="0.2s" 
           className="w-full"
-          // textContentToAnalyze prop removed
         >
           <p className="text-md md:text-lg text-muted-foreground max-w-2xl mx-auto">
             {bioContent.paragraph}
@@ -51,18 +48,17 @@ export default function HomePage() {
         <ScrollAnimator 
           delay="0.25s" 
           className="w-full"
-          // textContentToAnalyze prop removed (was commented out anyway)
         >
           <div className="flex justify-center gap-4 mt-4 mb-8">
             {bioContent.linkedinUrl && (
-              <Button asChild variant="outline" size="icon" className="rounded-full hover:bg-primary/10 hover:border-primary">
+              <Button asChild variant="outline" size="icon" className="rounded-full hover:bg-primary/10 hover:border-primary group">
                 <Link href={bioContent.linkedinUrl} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
                   <Linkedin className="h-5 w-5 text-primary group-hover:text-primary-foreground" />
                 </Link>
               </Button>
             )}
             {bioContent.githubUrl && bioContent.githubUrl !== "#" && (
-              <Button asChild variant="outline" size="icon" className="rounded-full hover:bg-primary/10 hover:border-primary">
+              <Button asChild variant="outline" size="icon" className="rounded-full hover:bg-primary/10 hover:border-primary group">
                 <Link href={bioContent.githubUrl} target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
                   <Github className="h-5 w-5 text-primary group-hover:text-primary-foreground" />
                 </Link>
@@ -77,16 +73,16 @@ export default function HomePage() {
         </ScrollAnimator>
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <ScrollAnimator delay="0.3s" /* textContentToAnalyze prop removed */>
+          <ScrollAnimator delay="0.3s">
             <SectionCard title="My Skills" description="Discover the technologies I master." link="/skills" />
           </ScrollAnimator>
-          <ScrollAnimator delay="0.4s" /* textContentToAnalyze prop removed */>
+          <ScrollAnimator delay="0.4s">
             <SectionCard title="My Resume" description="A detailed overview of my journey." link="/resume" />
           </ScrollAnimator>
-          <ScrollAnimator delay="0.5s" /* textContentToAnalyze prop removed */>
+          <ScrollAnimator delay="0.5s">
             <SectionCard title="My Hobbies" description="What I do in my free time." link="/hobbies" />
           </ScrollAnimator>
-          <ScrollAnimator delay="0.6s" /* textContentToAnalyze prop removed */>
+          <ScrollAnimator delay="0.6s">
             <SectionCard title="My Projects" description="See my work in action." link="/projects" />
           </ScrollAnimator>
         </div>

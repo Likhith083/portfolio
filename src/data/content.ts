@@ -30,7 +30,7 @@ export const bioContent: Bio = {
   avatarUrl: "https://placehold.co/128x128.png",
   dataAiHintAvatar: "professional student",
   linkedinUrl: "https://www.linkedin.com/in/likhithavileli/",
-  githubUrl: "#", // Please replace # with your actual GitHub profile URL
+  githubUrl: "https://github.com/Likhith083", 
 };
 
 export const projectsData: Project[] = [
@@ -68,6 +68,7 @@ export const projectsData: Project[] = [
     imageUrl: 'https://placehold.co/600x400.png',
     dataAiHint: 'personal website',
     tags: ['Next.js', 'AI', 'Animation', 'Tailwind CSS', 'React'],
-    link: 'https://github.com/yourusername/kinetic-folio', // Example link
+    link: '#', // Example link, should be updated if this is a public repo
   },
 ];
+
