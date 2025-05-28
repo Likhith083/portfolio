@@ -1,3 +1,4 @@
+
 import type {Metadata} from 'next';
 import {Geist, Geist_Mono} from 'next/font/google';
 import './globals.css';
@@ -14,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Kinetic Folio',
-  description: 'A dynamic split-screen portfolio with floating animations.',
+  title: 'Kinetic Folio - Likhith Reddy Avileli',
+  description: 'An interactive 3D-animated portfolio showcasing skills, resume, hobbies, and projects of Likhith Reddy Avileli.',
 };
 
 export default function RootLayout({
